@@ -1,20 +1,28 @@
+//Controller
 public class GameController {
-    private int currency;
-    private int curPerTick;
-    private int  tickPerSec;
+    private PlayerData data;
+    private GuiController gui;
 
-    public GameController(PlayerData data){
-        this.currency = data.currency;
-        this.curPerTick = data.curPerTick;
-        this.tickPerSec = data.tickPerSec;
+    public GameController(PlayerData data, GuiController gui) {
+        this.data = data;
+        this.gui = gui;
+    }
+
+    public void incrementCurrency(int amount) {
+        int finalValue = data.getCurrency() + amount;
+        data.setCurrency(finalValue);
     }
 
     private void increaseCurPerTick(int amount){
-        curPerTick += amount;
+        int finalValue = data.getCurPerTick() + amount;
+        data.setCurPerTick(finalValue);
+
     }
 
     private void increaseTickPerSec(int amount){
-        tickPerSec += amount;
+        int finalValue = data.getTickPerSec() + amount;
+        data.setTickPerSec(finalValue);
     }
+
 
 }
