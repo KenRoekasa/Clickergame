@@ -43,7 +43,7 @@ public class FileHandling{
 			
 			return data;
 		} catch (FileNotFoundException e) {
-			System.err.println("FileNotFoundException, assuming no saved messages");
+			System.err.println("FileNotFoundException, generating new data file");
 		} catch (IOException e) {
 			System.err.println("IOException:");
 			e.printStackTrace();

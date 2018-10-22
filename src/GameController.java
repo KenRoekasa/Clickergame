@@ -4,8 +4,8 @@ public class GameController {
     private GuiController gui;
     private FileHandling fileHandler = new FileHandling();
 
-    public GameController(PlayerData data) {
-        this.data = data;
+    public GameController() {
+        this.data = fileHandler.loadPlayerData();
         this.gui = gui;
     }
 
@@ -26,7 +26,8 @@ public class GameController {
     }
     
     private void exit() {
-    	
+    	fileHandler.saveToFile(data);
+    	System.exit(0);
     }
 
 
