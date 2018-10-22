@@ -3,7 +3,7 @@ public class GameController {
     private PlayerData data;
     private GuiController gui;
 
-    public GameController(PlayerData data, GuiController gui) {
+    public GameController(PlayerData data) {
         this.data = data;
         this.gui = gui;
     }
