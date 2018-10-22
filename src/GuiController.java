@@ -9,8 +9,9 @@ public class GuiController{
     private JPanel infoPanel;
     private JPanel mainPanel;
     private JPanel bottomPanel;
+    private JPanel upgradePanel;
     private JLabel labelCurrency;
-    private JButton mainButton,exitButton;
+    private JButton mainButton,exitButton, upgrade1Button;
     private GameController gameController;
 
     public GuiController(GameController gameController){
@@ -22,12 +23,33 @@ public class GuiController{
         infoPanel = new JPanel();
         mainPanel= new JPanel();
         bottomPanel = new JPanel();
+        upgradePanel = new JPanel();
 
         mainButton = new JButton(new ImageIcon("icons/mince.jpg"));
         mainButton.setPreferredSize(new Dimension(100,100));
         exitButton = new JButton("EXIT");
+        
+        upgrade1Button = new JButton("Oven");
 
         labelCurrency = new JLabel("Mince Pies: " + gameController.getCurrency());
+
+
+        infoPanel.add(labelCurrency);
+
+        mainPanel.add(mainButton);
+
+        bottomPanel.add(exitButton);
+
+        upgradePanel.add(upgrade1Button);
+
+
+        frame.add(infoPanel, BorderLayout.PAGE_START);
+        frame.add(mainPanel,BorderLayout.CENTER);
+        frame.add(exitButton, BorderLayout.PAGE_END);
+        frame.add(upgradePanel, BorderLayout.LINE_END);
+
+        frame.pack();
+        frame.setVisible(true);
 
         mainButton.addActionListener(new ActionListener() {
             @Override
@@ -36,7 +58,7 @@ public class GuiController{
                 labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
-        
+
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,19 +66,12 @@ public class GuiController{
             }
         });
 
-        infoPanel.add(labelCurrency);
-
-        mainPanel.add(mainButton);
-
-        bottomPanel.add(exitButton);
-
-        frame.add(infoPanel, BorderLayout.PAGE_START);
-        frame.add(mainPanel,BorderLayout.CENTER);
-        frame.add(exitButton, BorderLayout.PAGE_END);
-
-        frame.pack();
-        frame.setVisible(true);
-
+        upgrade1Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.increaseCurPerTick(1);
+            }
+        });
 
     }
 }

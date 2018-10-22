@@ -12,18 +12,18 @@ public class GameController {
         data.setCurrency(finalValue);
     }
 
-    private void increaseCurPerTick(int amount){
+    public void increaseCurPerTick(int amount){
         int finalValue = data.getCurPerTick() + amount;
         data.setCurPerTick(finalValue);
 
     }
 
-    private void increaseTickPerSec(int amount){
+    public void increaseTickPerSec(int amount){
         int finalValue = data.getTickPerSec() + amount;
         data.setTickPerSec(finalValue);
     }
     
-    private boolean decrementCurrency(int amount) {
+    public boolean decrementCurrency(int amount) {
     	int finalValue = data.getCurrency() - amount;
     	if(amount >= 0) {
     		data.setCurrency(finalValue);
