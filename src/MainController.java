@@ -1,7 +1,6 @@
 public class MainController {
     public static void main(String[] args){
-        PlayerData data = new PlayerData();
-        GameController gameController = new GameController(data);
+        GameController gameController = new GameController();
         GuiController gui = new GuiController(gameController);
     }
 
