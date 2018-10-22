@@ -11,9 +11,9 @@ public class FileHandling{
 			// Sets file names/locations to save to
 			FileOutputStream datafile = new FileOutputStream("playerdata.ser");
 			
-			// Writes the objects clientTable and clientInfoTable to files
+			// Writes the PlayerData object to a file
 			ObjectOutputStream outputObj = new ObjectOutputStream(datafile);
-			outputObj.writeObject(datafile);
+			outputObj.writeObject(data);
 			
 			// Closes output streams
 			outputObj.close();
@@ -29,7 +29,7 @@ public class FileHandling{
 
 	public PlayerData loadPlayerData() {
 		try {
-			// Sets file names to load from
+			// Sets file name to load from
 			String filePath = "playerdata.ser";
 			FileInputStream file = new FileInputStream(filePath);
 			
