@@ -10,7 +10,7 @@ public class GuiController {
     private JPanel bottomPanel;
     private JPanel upgradePanel;
     private JLabel labelCurrency;
-    private JButton mainButton, exitButton, upgrade1Button, upgrade2Button;
+    private JButton mainButton, exitButton, upgrade1Button;
     private GameController gameController;
 
     public GuiController(GameController gameController) {
@@ -28,7 +28,6 @@ public class GuiController {
         exitButton = new JButton("EXIT");
 
         upgrade1Button = new JButton("Oven");
-        upgrade2Button = new JButton("BUY ALL");
 
         labelCurrency = new JLabel("Mince Pies: " + gameController.getCurrency());
 
@@ -40,7 +39,6 @@ public class GuiController {
         bottomPanel.add(exitButton);
 
         upgradePanel.add(upgrade1Button);
-        upgradePanel.add(upgrade2Button);
 
 
         frame.add(infoPanel, BorderLayout.PAGE_START);
@@ -70,10 +68,8 @@ public class GuiController {
         upgrade1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(gameController.decrementCurrency(100)){
-                    gameController.increaseCurPerClick(1);
-                    labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
-                }
+            	gameController.addOven();
+            	labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
 

@@ -1,6 +1,7 @@
 //Controller
 public class GameController extends Thread {
     private PlayerData data;
+    private GameData gameData = new GameData();
     private FileHandling fileHandler = new FileHandling();
 
     public GameController() {
@@ -40,6 +41,19 @@ public class GameController extends Thread {
             return false;
         }
     }
+    
+    public void buyAll() {
+    	int currentCurrency = data.getCurrency();
+    	int num = currentCurrency/gameData.getOvenCost();
+    	this.decrementCurrency(num*gameData.getOvenCost());
+    	this.increaseCurPerClick(num);
+    }
+    
+    public void addOven() {
+		if(this.decrementCurrency(100)){
+            this.increaseCurPerClick(1);
+        }
+	}
 
     public void exit() {
         fileHandler.saveToFile(data);
