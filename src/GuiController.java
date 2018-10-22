@@ -36,6 +36,13 @@ public class GuiController{
                 labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
+        
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.exit();
+            }
+        });
 
         infoPanel.add(labelCurrency);
 
