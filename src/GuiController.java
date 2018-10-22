@@ -46,7 +46,7 @@ public class GuiController {
         upgradePanel.add(upgrade3Button);
         upgradePanel.add(upgrade4Button);
 
-        upgradePanel.setLayout(new GridLayout(2,3));
+        upgradePanel.setLayout(new GridLayout(2, 3));
 
 
         frame.add(infoPanel, BorderLayout.PAGE_START);
@@ -78,8 +78,8 @@ public class GuiController {
         upgrade1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	gameController.addOven();
-            	labelCurrency.setText("Mince Pies: " + gameController.getPlayerData().getCurrency());
+                gameController.addOven();
+                labelCurrency.setText("Mince Pies: " + gameController.getPlayerData().getCurrency());
             }
         });
 
@@ -87,7 +87,7 @@ public class GuiController {
         upgrade2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	gameController.buyAll();
+                gameController.buyAll();
             }
         });
 
