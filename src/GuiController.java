@@ -18,7 +18,7 @@ public class GuiController{
             @Override
             public void actionPerformed(ActionEvent e) {
                 gameController.incrementCurrency(1);
-                System.out.println("INcrementation");
+                System.out.println("Incrementation");
             }
         });
         frame.add(panel);
