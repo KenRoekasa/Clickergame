@@ -35,6 +35,13 @@ public class GuiController{
                 System.out.println("Incrementation");
             }
         });
+        
+        exitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.exit();
+            }
+        });
 
         infoPanel.add(labelCurrency);
 

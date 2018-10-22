@@ -1,5 +1,7 @@
+import java.io.Serializable;
+
 //Model
-public class PlayerData {
+public class PlayerData implements Serializable{
     private int currency = 0;
     private int curPerTick = 1;
     private int tickPerSec = 1;

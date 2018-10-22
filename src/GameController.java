@@ -35,7 +35,7 @@ public class GameController {
     	}
     }
     
-    private void exit() {
+    public void exit() {
     	fileHandler.saveToFile(data);
     	System.exit(0);
     }
