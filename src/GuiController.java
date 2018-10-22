@@ -23,7 +23,8 @@ public class GuiController{
         mainPanel= new JPanel();
         bottomPanel = new JPanel();
 
-        mainButton = new JButton("MINCE PIE");
+        mainButton = new JButton(new ImageIcon("icons/mince.jpg"));
+        mainButton.setPreferredSize(new Dimension(100,100));
         exitButton = new JButton("EXIT");
 
         labelCurrency = new JLabel("Mince Pies: ");
@@ -32,7 +33,7 @@ public class GuiController{
             @Override
             public void actionPerformed(ActionEvent e) {
                 gameController.incrementCurrency(1);
-                System.out.println("Incrementation");
+                labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
         
