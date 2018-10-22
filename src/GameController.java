@@ -7,12 +7,17 @@ public class GameController extends Thread {
         this.data = fileHandler.loadPlayerData();
     }
 
-//    @Override
-//    public synchronized void start() {
-//        while (true){
-//            incrementCurrency();
-//        }
-//    }
+    @Override
+    public synchronized void run() {
+        while (true){
+            incrementCurrency(data.getCurPerTick());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void incrementCurrency(int amount) {
         int finalValue = data.getCurrency() + amount;
@@ -47,11 +52,7 @@ public class GameController extends Thread {
     }
 
 
-    public int getCurrency() {
-        return data.getCurrency();
-    }
-
-    public int getCurPerClick() {
-        return data.getCurPerClick();
+    public PlayerData getPlayerData() {
+        return data;
     }
 }

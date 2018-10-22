@@ -2,8 +2,9 @@ import java.io.Serializable;
 
 //Model
 public class PlayerData implements Serializable {
+
     private int currency = 0;
-    private int curPerTick = 1;
+    private int curPerTick = 0;
     //TODO change tick per second
     private final int TICKPERSEC = 1;
 
@@ -17,7 +18,7 @@ public class PlayerData implements Serializable {
 
     private int curPerClick = 1;
 
-    public int getCurrency() {
+    public int  getCurrency() {
         return currency;
     }
 
