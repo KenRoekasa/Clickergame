@@ -72,7 +72,7 @@ public class GuiController {
         upgrade1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(gameController.decrementCurrency(100)){
+                if (gameController.decrementCurrency(100)) {
                     gameController.increaseCurPerClick(1);
                 }
             }
