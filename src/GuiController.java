@@ -29,7 +29,7 @@ public class GuiController {
 
         upgrade1Button = new JButton("Oven");
 
-        labelCurrency = new JLabel("Mince Pies: " + gameController.getCurrency());
+        labelCurrency = new JLabel("Mince Pies: " + gameController.getPlayerData().getCurrency());
 
 
         infoPanel.add(labelCurrency);
@@ -49,11 +49,13 @@ public class GuiController {
         frame.pack();
         frame.setVisible(true);
 
+        GuiThread guiThread = new GuiThread(labelCurrency, gameController.getPlayerData());
+        guiThread.start();
+
         mainButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.incrementCurrency(gameController.getCurPerClick());
-                labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
+                gameController.incrementCurrency(gameController.getPlayerData().getCurPerClick());
             }
         });
 
@@ -69,9 +71,10 @@ public class GuiController {
             @Override
             public void actionPerformed(ActionEvent e) {
             	gameController.addOven();
-            	labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
+            	labelCurrency.setText("Mince Pies: " + gameController.getPlayerData().getCurrency());
             }
         });
 
     }
 }
+
