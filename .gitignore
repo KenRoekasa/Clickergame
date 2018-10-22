@@ -3,6 +3,7 @@
 .project
 .classpath
 \bin
+.ser
 
 # Compiled class file
 *.class
