@@ -4,7 +4,7 @@ public class GameController {
     private GuiController gui;
     private FileHandling fileHandler = new FileHandling();
 
-    public GameController(PlayerData data, GuiController gui) {
+    public GameController(PlayerData data) {
         this.data = data;
         this.gui = gui;
     }
