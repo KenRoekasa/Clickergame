@@ -2,6 +2,7 @@
 public class GameController {
     private PlayerData data;
     private GuiController gui;
+    private FileHandling fileHandler = new FileHandling();
 
     public GameController(PlayerData data, GuiController gui) {
         this.data = data;
@@ -22,6 +23,10 @@ public class GameController {
     private void increaseTickPerSec(int amount){
         int finalValue = data.getTickPerSec() + amount;
         data.setTickPerSec(finalValue);
+    }
+    
+    private void exit() {
+    	
     }
 
 
