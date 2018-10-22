@@ -62,8 +62,14 @@ public class GameController extends Thread {
     }
     
     public void addOven() {
-		if(this.decrementCurrency(100)){
+		if(this.decrementCurrency(gameData.getOvenCost())){
             this.increaseCurPerClick(1);
+        }
+	}
+    
+    public void addMum() {
+		if(this.decrementCurrency(gameData.getMumCost())){
+            this.increaseCurPerTick(1);
         }
 	}
 

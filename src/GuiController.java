@@ -98,6 +98,14 @@ public class GuiController {
                 gameController.increaseCurPerTick(1);
             }
         });
+        
+      //Mum buyall
+        upgrade4Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.buyAllMum();
+            }
+        });
 
     }
 }
