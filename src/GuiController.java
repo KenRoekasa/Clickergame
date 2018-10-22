@@ -87,7 +87,7 @@ public class GuiController {
         upgrade2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.buyAll();
+            	gameController.buyAllOven();
             }
         });
 
@@ -96,6 +96,14 @@ public class GuiController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 gameController.increaseCurPerTick(1);
+            }
+        });
+        
+      //Mum buyall
+        upgrade4Button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gameController.buyAllMum();
             }
         });
 

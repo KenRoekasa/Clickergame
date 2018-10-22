@@ -47,16 +47,29 @@ public class GameController extends Thread {
         }
     }
     
-    public void buyAll() {
+    public void buyAllOven() {
     	int currentCurrency = data.getCurrency();
     	int num = currentCurrency/gameData.getOvenCost();
     	this.decrementCurrency(num*gameData.getOvenCost());
     	this.increaseCurPerClick(num);
     }
     
+    public void buyAllMum() {
+    	int currentCurrency = data.getCurrency();
+    	int num = currentCurrency/gameData.getMumCost();
+    	this.decrementCurrency(num*gameData.getMumCost());
+    	this.increaseCurPerTick(num);
+    }
+    
     public void addOven() {
-		if(this.decrementCurrency(100)){
+		if(this.decrementCurrency(gameData.getOvenCost())){
             this.increaseCurPerClick(1);
+        }
+	}
+    
+    public void addMum() {
+		if(this.decrementCurrency(gameData.getMumCost())){
+            this.increaseCurPerTick(1);
         }
 	}
 
