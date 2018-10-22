@@ -1,34 +1,32 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GuiController{
+public class GuiController {
     private JFrame frame;
     private JPanel infoPanel;
     private JPanel mainPanel;
     private JPanel bottomPanel;
     private JPanel upgradePanel;
     private JLabel labelCurrency;
-    private JButton mainButton,exitButton, upgrade1Button;
+    private JButton mainButton, exitButton, upgrade1Button;
     private GameController gameController;
 
-    public GuiController(GameController gameController){
+    public GuiController(GameController gameController) {
         this.gameController = gameController;
         frame = new JFrame("Clicker game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-
         infoPanel = new JPanel();
-        mainPanel= new JPanel();
+        mainPanel = new JPanel();
         bottomPanel = new JPanel();
         upgradePanel = new JPanel();
 
         mainButton = new JButton(new ImageIcon("icons/mince.jpg"));
-        mainButton.setPreferredSize(new Dimension(100,100));
+        mainButton.setPreferredSize(new Dimension(100, 100));
         exitButton = new JButton("EXIT");
-        
+
         upgrade1Button = new JButton("Oven");
 
         labelCurrency = new JLabel("Mince Pies: " + gameController.getCurrency());
@@ -44,7 +42,7 @@ public class GuiController{
 
 
         frame.add(infoPanel, BorderLayout.PAGE_START);
-        frame.add(mainPanel,BorderLayout.CENTER);
+        frame.add(mainPanel, BorderLayout.CENTER);
         frame.add(exitButton, BorderLayout.PAGE_END);
         frame.add(upgradePanel, BorderLayout.LINE_END);
 
@@ -54,7 +52,7 @@ public class GuiController{
         mainButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.incrementCurrency(1);
+                gameController.incrementCurrency(gameController.getCurPerClick());
                 labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
@@ -66,10 +64,14 @@ public class GuiController{
             }
         });
 
+        //Oven upgrade
         upgrade1Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.increaseCurPerTick(1);
+                if(gameController.decrementCurrency(100)){
+                    gameController.increaseCurPerClick(1);
+                    labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
+                }
             }
         });
 
