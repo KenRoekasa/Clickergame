@@ -33,7 +33,7 @@ public class GuiController{
             @Override
             public void actionPerformed(ActionEvent e) {
                 gameController.incrementCurrency(1);
-                System.out.println("Incrementation");
+                labelCurrency.setText("Mince Pies: " + gameController.getCurrency());
             }
         });
 

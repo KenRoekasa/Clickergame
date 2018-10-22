@@ -1,12 +1,10 @@
 //Controller
 public class GameController {
     private PlayerData data;
-    private GuiController gui;
     private FileHandling fileHandler = new FileHandling();
 
     public GameController() {
         this.data = fileHandler.loadPlayerData();
-        this.gui = gui;
     }
 
     public void incrementCurrency(int amount) {
@@ -41,4 +39,7 @@ public class GameController {
     }
 
 
+    public int getCurrency() {
+        return data.getCurrency();
+    }
 }
