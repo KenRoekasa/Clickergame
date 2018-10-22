@@ -84,7 +84,7 @@ public class GuiController {
         upgrade2Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            	gameController.buyAll();
+            	gameController.buyAllOven();
             }
         });
 
