@@ -27,7 +27,7 @@ public class GuiController{
         mainButton.setPreferredSize(new Dimension(100,100));
         exitButton = new JButton("EXIT");
 
-        labelCurrency = new JLabel("Mince Pies: ");
+        labelCurrency = new JLabel("Mince Pies: " + gameController.getCurrency());
 
         mainButton.addActionListener(new ActionListener() {
             @Override
