@@ -25,6 +25,16 @@ public class GameController {
         data.setTickPerSec(finalValue);
     }
     
+    private boolean decrementCurrency(int amount) {
+    	int finalValue = data.getCurrency() - amount;
+    	if(amount >= 0) {
+    		data.setCurrency(finalValue);
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    
     private void exit() {
     	fileHandler.saveToFile(data);
     	System.exit(0);
