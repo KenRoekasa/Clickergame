@@ -32,6 +32,7 @@ public class GuiController {
         upgrade3Button = new JButton("Mum (500)");
         upgrade4Button = new JButton("BUY ALL");
 
+
         //Labels
         labelCurrency = new JLabel("Mince Pies: " + gameController.getPlayerData().getCurrency());
         labelPerSecond = new JLabel("per second: " + gameController.getPlayerData().getCurPerTick());
@@ -64,7 +65,7 @@ public class GuiController {
         frame.setVisible(true);
 
         //Thread for updating the gui
-        GuiThread guiThread = new GuiThread(labelCurrency, labelPerSecond ,gameController.getPlayerData());
+        GuiThread guiThread = new GuiThread(labelCurrency, labelPerSecond ,upgrade1Button,upgrade2Button,upgrade3Button, upgrade4Button,gameController.getPlayerData(),gameController.getGameData());
         guiThread.start();
 
         mainButton.addActionListener(new ActionListener() {

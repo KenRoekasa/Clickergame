@@ -10,7 +10,7 @@ public class GameController extends Thread {
 
     @Override
     public synchronized void run() {
-        while (true){
+        while (true) {
             incrementCurrency(data.getCurPerTick());
             try {
                 Thread.sleep(1000);
@@ -46,32 +46,32 @@ public class GameController extends Thread {
             return false;
         }
     }
-    
+
     public void buyAllOven() {
-    	int currentCurrency = data.getCurrency();
-    	int num = currentCurrency/gameData.getOvenCost();
-    	this.decrementCurrency(num*gameData.getOvenCost());
-    	this.increaseCurPerClick(num);
+        int currentCurrency = data.getCurrency();
+        int num = currentCurrency / gameData.getOvenCost();
+        this.decrementCurrency(num * gameData.getOvenCost());
+        this.increaseCurPerClick(num);
     }
-    
+
     public void buyAllMum() {
-    	int currentCurrency = data.getCurrency();
-    	int num = currentCurrency/gameData.getMumCost();
-    	this.decrementCurrency(num*gameData.getMumCost());
-    	this.increaseCurPerTick(num);
+        int currentCurrency = data.getCurrency();
+        int num = currentCurrency / gameData.getMumCost();
+        this.decrementCurrency(num * gameData.getMumCost());
+        this.increaseCurPerTick(num);
     }
-    
+
     public void addOven() {
-		if(this.decrementCurrency(gameData.getOvenCost())){
+        if (this.decrementCurrency(gameData.getOvenCost())) {
             this.increaseCurPerClick(1);
         }
-	}
-    
+    }
+
     public void addMum() {
-		if(this.decrementCurrency(gameData.getMumCost())){
+        if (this.decrementCurrency(gameData.getMumCost())) {
             this.increaseCurPerTick(1);
         }
-	}
+    }
 
     public void exit() {
         fileHandler.saveToFile(data);
@@ -82,4 +82,10 @@ public class GameController extends Thread {
     public PlayerData getPlayerData() {
         return data;
     }
+
+    public GameData getGameData() {
+        return gameData;
+    }
+
+
 }
