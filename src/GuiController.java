@@ -27,9 +27,9 @@ public class GuiController {
         exitButton = new JButton("EXIT");
 
         //Upgrades Buttons
-        upgrade1Button = new JButton("Oven");
+        upgrade1Button = new JButton("Oven (100)");
         upgrade2Button = new JButton("BUY ALL");
-        upgrade3Button = new JButton("Mum");
+        upgrade3Button = new JButton("Mum (500)");
         upgrade4Button = new JButton("BUY ALL");
 
         //Labels
