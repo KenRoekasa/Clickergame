@@ -103,7 +103,7 @@ public class GuiController {
         upgrade3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.increaseCurPerTick(1);
+                gameController.addMum();
             }
         });
 
