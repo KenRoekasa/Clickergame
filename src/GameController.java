@@ -54,7 +54,7 @@ public class GameController extends Thread {
         this.increaseCurPerClick(num);
     }
 
-    public void buyAllMum() {
+    public void buyAllGranny() {
         int currentCurrency = data.getCurrency();
         int num = currentCurrency / gameData.getMumCost();
         this.decrementCurrency(num * gameData.getMumCost());
@@ -67,7 +67,7 @@ public class GameController extends Thread {
         }
     }
 
-    public void addMum() {
+    public void addGranny() {
         if (this.decrementCurrency(gameData.getMumCost())) {
             this.increaseCurPerTick(1);
         }

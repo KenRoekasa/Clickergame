@@ -29,7 +29,7 @@ public class GuiController {
         //Upgrades Buttons
         upgrade1Button = new JButton("Oven (100)");
         upgrade2Button = new JButton("BUY ALL");
-        upgrade3Button = new JButton("Mum (500)");
+        upgrade3Button = new JButton("Granny (500)");
         upgrade4Button = new JButton("BUY ALL");
 
 
@@ -103,7 +103,7 @@ public class GuiController {
         upgrade3Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.addMum();
+                gameController.addGranny();
             }
         });
 
@@ -111,7 +111,7 @@ public class GuiController {
         upgrade4Button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gameController.buyAllMum();
+                gameController.buyAllGranny();
             }
         });
 
